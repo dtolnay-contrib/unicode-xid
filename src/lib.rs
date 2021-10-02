@@ -36,6 +36,7 @@
 )]
 #![no_std]
 #![cfg_attr(feature = "bench", feature(test, unicode_internals))]
+#![cfg_attr(feature = "cargo-clippy", allow(renamed_and_removed_lints))]
 
 #[cfg(test)]
 #[macro_use]
@@ -60,6 +61,7 @@ pub trait UnicodeXID {
     /// 'XID_Start' is a Unicode Derived Property specified in
     /// [UAX #31](http://unicode.org/reports/tr31/#NFKC_Modifications),
     /// mostly similar to ID_Start but modified for closure under NFKx.
+    #[cfg_attr(feature = "cargo-clippy", allow(wrong_self_convention))]
     fn is_xid_start(self) -> bool;
 
     /// Returns whether the specified `char` satisfies the 'XID_Continue'
@@ -68,6 +70,7 @@ pub trait UnicodeXID {
     /// 'XID_Continue' is a Unicode Derived Property specified in
     /// [UAX #31](http://unicode.org/reports/tr31/#NFKC_Modifications),
     /// mostly similar to 'ID_Continue' but modified for closure under NFKx.
+    #[cfg_attr(feature = "cargo-clippy", allow(wrong_self_convention))]
     fn is_xid_continue(self) -> bool;
 }
 
