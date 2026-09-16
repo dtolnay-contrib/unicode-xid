@@ -178,7 +178,7 @@ if __name__ == "__main__":
         # download and parse all the data
         fetch("ReadMe.txt")
         with open("ReadMe.txt") as readme:
-            pattern = r"for Version (\d+)\.(\d+)\.(\d+) of the Unicode"
+            pattern = r"for version (\d+)\.(\d+)\.(\d+) of the"
             unicode_version = re.search(pattern, readme.read()).groups()
         rf.write("""
 /// The version of [Unicode](http://www.unicode.org/)
